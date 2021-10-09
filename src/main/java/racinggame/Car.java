@@ -26,4 +26,14 @@ public class Car {
 		}
 		return STOP;
 	}
+
+	public void printDistance() {
+
+		StringBuilder printText = new StringBuilder();
+		printText.append(this.carName + " : ");
+		for(int i = 0; i<this.distance; i++){
+			printText.append("-");
+		}
+		System.out.println(printText);
+	}
 }
