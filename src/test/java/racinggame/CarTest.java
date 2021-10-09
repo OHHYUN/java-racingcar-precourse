@@ -10,8 +10,6 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import nextstep.test.NSTest;
-
 public class CarTest {
 
 	private OutputStream outputStream = new ByteArrayOutputStream();
