@@ -33,7 +33,7 @@ public class RacingTest {
 	}
 
 	@Test
-	void 여러개의_자동차의_전진() {
+	void 여러개의_자동차의_전진_후_출력() {
 		try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
 			mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
 				.thenReturn(4)
