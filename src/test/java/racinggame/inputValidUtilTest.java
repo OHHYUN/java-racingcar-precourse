@@ -12,6 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import racinggame.model.CarName;
 import racinggame.utils.InputValidUtils;
 
 public class inputValidUtilTest {
@@ -53,13 +54,12 @@ public class inputValidUtilTest {
 
     @Test
     void 다섯글자_이상_검증() {
-        String fiveDigit = "네번째글자";
         String sixDigit = "다섯번째글자";
 
-        boolean isFiveDigit = InputValidUtils.isFiveDigit(fiveDigit);
-        assertThat(isFiveDigit).isTrue();
-        isFiveDigit = InputValidUtils.isFiveDigit(sixDigit);
-        assertThat(isFiveDigit).isFalse();
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            new CarName(sixDigit);
+        }).withMessage("자동차의 이름은 5글자 이하여야 합니다.");
+
 
     }
 

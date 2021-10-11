@@ -6,11 +6,11 @@ public class Car implements Comparable<Car>{
     public static final int STOP = 0;
     public static final int FORWARD_CONDITION = 4;
 
-    private String carName;
+    private CarName carName;
     private int distance;
 
     public Car(String carName) {
-        this.carName = carName;
+        this.carName = new CarName(carName);
     }
 
     public void move(int ranNo) {
@@ -31,7 +31,7 @@ public class Car implements Comparable<Car>{
     public void printDistance() {
 
         StringBuilder printText = new StringBuilder();
-        printText.append(this.carName + " : ");
+        printText.append(this.carName.getCarName() + " : ");
         for(int i = 0; i<this.distance; i++){
             printText.append("-");
         }
@@ -39,7 +39,7 @@ public class Car implements Comparable<Car>{
     }
 
     public String getCarName() {
-        return carName;
+        return carName.getCarName();
     }
 
     @Override
