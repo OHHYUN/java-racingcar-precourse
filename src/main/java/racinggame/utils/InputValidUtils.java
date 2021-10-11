@@ -45,4 +45,11 @@ public class InputValidUtils {
             carNameList.add(carName);
         }
     }
+
+    public static boolean isFiveDigit(String fiveDigit) {
+        if(fiveDigit.length()>5){
+            return false;
+        }
+        return true;
+    }
 }
