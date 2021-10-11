@@ -46,7 +46,7 @@ public class inputValidUtilTest {
 
     @Test
     void 이름_중복_확인() {
-        String carNames = "이거,이거,저거,저거,조고";
+        String carNames = "이거,이거,저거,저거,조고,저거";
         boolean isDuplicateNames = InputValidUtils.isDuplicateNames(carNames);
         assertThat(isDuplicateNames).isTrue();
     }
