@@ -18,4 +18,15 @@ public class InputValidUtils {
         Matcher matcher = pattern.matcher(carNames);
         return matcher.find();
     }
+
+    public static boolean isNameBlank(String carNames) {
+        String regex = ",*[ ]+,+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(carNames);
+        return matcher.find();
+    }
+
+    public static boolean isDuplicateNames(String carNames) {
+        return false;
+    }
 }
