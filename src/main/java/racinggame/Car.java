@@ -1,6 +1,6 @@
 package racinggame;
 
-public class Car {
+public class Car implements Comparable<Car>{
 
 	public static final int MOVE_FORWARD = 1;
 	public static final int STOP = 0;
@@ -35,5 +35,14 @@ public class Car {
 			printText.append("-");
 		}
 		System.out.println(printText);
+	}
+
+	public String getCarName() {
+		return carName;
+	}
+
+	@Override
+	public int compareTo(Car o) {
+		return o.distance - this.distance;
 	}
 }
