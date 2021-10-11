@@ -5,10 +5,11 @@ import static org.assertj.core.api.Assertions.*;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import racinggame.model.Car;
 
 public class CarTest {
 

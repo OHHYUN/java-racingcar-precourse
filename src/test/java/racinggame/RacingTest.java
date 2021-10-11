@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import nextstep.utils.Randoms;
+import racinggame.model.Car;
+import racinggame.model.Racing;
 
 public class RacingTest {
     private PrintStream standardOut = System.out;

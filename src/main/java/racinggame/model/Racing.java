@@ -1,6 +1,4 @@
-package racinggame;
-
-import static nextstep.utils.Randoms.*;
+package racinggame.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
