@@ -56,8 +56,8 @@ public class RacingTest {
                 .thenReturn(9);
             Racing racing = new Racing("이거","저거","조고");
             racing.moveAll();
-            racing.getWinner();
-            assertThat(outputStream.toString().trim()).contains("이거 : -", "저거 : ", "조고 : -");
+            racing.printWinner();
+            assertThat(outputStream.toString().trim()).contains("최종 우승자는 이거,조고 입니다.");
         }
     }
 
