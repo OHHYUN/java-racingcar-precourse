@@ -4,6 +4,7 @@ public class Car implements Comparable<Car>{
 
     public static final int MOVE_FORWARD = 1;
     public static final int STOP = 0;
+    public static final int FORWARD_CONDITION = 4;
 
     private String carName;
     private int distance;
@@ -21,7 +22,7 @@ public class Car implements Comparable<Car>{
     }
 
     public int isForward(int ranNo){
-        if(ranNo > 3){
+        if(ranNo >= FORWARD_CONDITION){
             return MOVE_FORWARD;
         }
         return STOP;
