@@ -37,6 +37,20 @@ public class inputValidUtilTest {
         assertThat(isLastCommaBlank).isTrue();
     }
 
+    @Test
+    void 공백만_있는_이름() {
+        String carNames = "  ,이거,   ,저거,   ,조고";
+        boolean isNameBlank = InputValidUtils.isNameBlank(carNames);
+        assertThat(isNameBlank).isTrue();
+    }
+
+    @Test
+    void 이름_중복_확인() {
+        String carNames = "이거,이거,저거,저거,조고";
+        boolean isDuplicateNames = InputValidUtils.isDuplicateNames(carNames);
+        assertThat(isDuplicateNames).isTrue();
+    }
+
     protected void outputStandard() {
         System.setOut(standardOut);
         System.out.println(outputStream.toString());
