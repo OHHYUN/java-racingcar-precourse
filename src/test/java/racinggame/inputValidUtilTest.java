@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import racinggame.utils.InputValidUtils;
 
-public class inputUtilTest {
+public class inputValidUtilTest {
     private PrintStream standardOut = System.out;
     private OutputStream outputStream = new ByteArrayOutputStream();
 
