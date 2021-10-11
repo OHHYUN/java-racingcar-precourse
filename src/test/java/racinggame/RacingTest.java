@@ -45,6 +45,20 @@ public class RacingTest {
 		}
 	}
 
+	@Test
+	void 우승자_출력() {
+		try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
+			mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
+				.thenReturn(4)
+				.thenReturn(3)
+				.thenReturn(9);
+			Racing racing = new Racing("이거","저거","조고");
+			racing.moveAll();
+			racing.getWinner();
+			assertThat(outputStream.toString().trim()).contains("이거 : -", "저거 : ", "조고 : -");
+		}
+	}
+
 	protected void outputStandard() {
 		System.setOut(standardOut);
 		System.out.println(outputStream.toString());
