@@ -51,6 +51,18 @@ public class inputValidUtilTest {
         assertThat(isDuplicateNames).isTrue();
     }
 
+    @Test
+    void 다섯글자_이상_검증() {
+        String fiveDigit = "네번째글자";
+        String sixDigit = "다섯번째글자";
+
+        boolean isFiveDigit = InputValidUtils.isFiveDigit(fiveDigit);
+        assertThat(isFiveDigit).isTrue();
+        isFiveDigit = InputValidUtils.isFiveDigit(sixDigit);
+        assertThat(isFiveDigit).isFalse();
+
+    }
+
     protected void outputStandard() {
         System.setOut(standardOut);
         System.out.println(outputStream.toString());
