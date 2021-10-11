@@ -30,6 +30,13 @@ public class inputUtilTest {
         assertThat(isConsecutiveComma).isTrue();
     }
 
+    @Test
+    void 마지막_쉼표_공백() {
+        String carNames = "이거,저거,조고, ";
+        boolean isLastCommaBlank = InputValidUtils.isLastCommaBlank(carNames);
+        assertThat(isLastCommaBlank).isTrue();
+    }
+
     protected void outputStandard() {
         System.setOut(standardOut);
         System.out.println(outputStream.toString());
