@@ -12,4 +12,10 @@ public class InputValidUtils {
         return matcher.find();
     }
 
+    public static boolean isLastCommaBlank(String carNames) {
+        String regex = ",[ ]*?$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(carNames);
+        return matcher.find();
+    }
 }
