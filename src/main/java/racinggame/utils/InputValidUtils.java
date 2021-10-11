@@ -46,10 +46,4 @@ public class InputValidUtils {
         }
     }
 
-    public static boolean isFiveDigit(String fiveDigit) {
-        if(fiveDigit.length()>5){
-            return false;
-        }
-        return true;
-    }
 }
