@@ -58,7 +58,7 @@ public class inputValidUtilTest {
 
         assertThatIllegalArgumentException().isThrownBy(()->{
             new CarName(sixDigit);
-        }).withMessage("자동차의 이름은 5글자 이하여야 합니다.");
+        }).withMessage("[ERROR] 자동차의 이름은 5글자 이하여야 합니다.");
 
 
     }

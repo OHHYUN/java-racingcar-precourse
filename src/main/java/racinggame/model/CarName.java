@@ -1,5 +1,8 @@
 package racinggame.model;
 
+import racinggame.ErrorType;
+import racinggame.InputException;
+
 public class CarName {
 
     public static final int LIMIT_CAR_NAME_DIGIT = 5;
@@ -8,7 +11,7 @@ public class CarName {
 
     public CarName(String carName){
         if(carName.length() > LIMIT_CAR_NAME_DIGIT){
-            throw new IllegalArgumentException("자동차의 이름은 5글자 이하여야 합니다.");
+            throw new InputException(ErrorType.ERROR_LIMIT_CAR_NAME);
         }
         this.carName = carName;
     }
