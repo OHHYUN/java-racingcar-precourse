@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.StringJoiner;
 
 import nextstep.utils.Randoms;
+import racinggame.ErrorType;
+import racinggame.InputException;
 
 public class Racing {
 
+    public static final int MINIMUM_CAR = 2;
     private List<Car> cars;
 
     public Racing(String... args) {
         this.cars = new ArrayList<>();
         for(String carName : args){
             this.cars.add(new Car(carName));
+        }
+        if(cars.size() < MINIMUM_CAR){
+            throw new InputException(ErrorType.ERROR_MINIMUM_CAR);
         }
     }
 
