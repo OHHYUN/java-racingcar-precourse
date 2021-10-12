@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import racinggame.model.CarName;
+import racinggame.model.Racing;
 import racinggame.utils.InputValidUtils;
 
 public class inputValidUtilTest {
@@ -64,7 +65,14 @@ public class inputValidUtilTest {
             new CarName(sixDigit);
         }).withMessage(ErrorType.ERROR_LIMIT_CAR_NAME.getErrMsg());
 
+    }
 
+    @Test
+    void 자동차_이름_두대_이상() {
+        String[] carNames = {"이꺼"};
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            new Racing(carNames);
+        }).withMessage(ErrorType.ERROR_MINIMUM_CAR.getErrMsg());
     }
 
     protected void outputStandard() {
