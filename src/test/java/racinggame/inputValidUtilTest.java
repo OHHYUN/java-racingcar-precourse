@@ -27,29 +27,33 @@ public class inputValidUtilTest {
     @Test
     void 쉼표_연속_검증() {
         String carNames = "이거,저거,조고,,네번째글자";
-        boolean isConsecutiveComma = InputValidUtils.isConsecutiveComma(carNames);
-        assertThat(isConsecutiveComma).isTrue();
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isConsecutiveComma(carNames);
+        }).withMessage(ErrorType.ERROR_CONSECUTIVE_COMMA.getErrMsg());
     }
 
     @Test
     void 마지막_쉼표_공백() {
         String carNames = "이거,저거,조고, ";
-        boolean isLastCommaBlank = InputValidUtils.isLastCommaBlank(carNames);
-        assertThat(isLastCommaBlank).isTrue();
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isLastCommaBlank(carNames);
+        }).withMessage(ErrorType.ERROR_LAST_COMMA_BLANK.getErrMsg());
     }
 
     @Test
     void 공백만_있는_이름() {
         String carNames = "  ,이거,   ,저거,   ,조고";
-        boolean isNameBlank = InputValidUtils.isNameBlank(carNames);
-        assertThat(isNameBlank).isTrue();
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isNameBlank(carNames);
+        }).withMessage(ErrorType.ERROR_NAME_BLANK.getErrMsg());
     }
 
     @Test
     void 이름_중복_확인() {
         String carNames = "이거,이거,저거,저거,조고,저거";
-        boolean isDuplicateNames = InputValidUtils.isDuplicateNames(carNames);
-        assertThat(isDuplicateNames).isTrue();
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isDuplicateNames(carNames);
+        }).withMessage(ErrorType.ERROR_DUPLICATE_NAME.getErrMsg());
     }
 
     @Test
@@ -58,7 +62,7 @@ public class inputValidUtilTest {
 
         assertThatIllegalArgumentException().isThrownBy(()->{
             new CarName(sixDigit);
-        }).withMessage("[ERROR] 자동차의 이름은 5글자 이하여야 합니다.");
+        }).withMessage(ErrorType.ERROR_LIMIT_CAR_NAME.getErrMsg());
 
 
     }
