@@ -75,6 +75,24 @@ public class inputValidUtilTest {
         }).withMessage(ErrorType.ERROR_MINIMUM_CAR.getErrMsg());
     }
 
+    @Test
+    void 숫자_입력_검증() {
+        String runningTime = "14f";
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isNumber(runningTime);
+        }).withMessage(ErrorType.ERROR_ONLY_NUMBER.getErrMsg());
+
+
+    }
+
+    @Test
+    void 큰_숫자_검증() {
+        String bigNumber = "4011";
+        assertThatIllegalArgumentException().isThrownBy(()->{
+            InputValidUtils.isBigNum(bigNumber);
+        }).withMessage(ErrorType.ERROR_TOO_BIG_NUMBER.getErrMsg());
+    }
+
     protected void outputStandard() {
         System.setOut(standardOut);
         System.out.println(outputStream.toString());

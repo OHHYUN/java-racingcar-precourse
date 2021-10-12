@@ -14,6 +14,7 @@ public class InputValidUtils {
     public static final String LAST_COMMA_BLANK = ",[ ]*?$";
     public static final String NAME_BLANK = ",*[ ]+,+";
     public static final String COMMA = ",";
+    public static final String NUMBER_CHECK = "^[1-9][0-9]*$";
 
     public static boolean isConsecutiveComma(String carNames) {
         Pattern pattern = Pattern.compile(CONSECUTIVE_COMMA);
@@ -59,6 +60,29 @@ public class InputValidUtils {
         if(match){
             throw new InputException(errorType);
         }
+    }
+
+    public static void validationAll(String carNames){
+        isConsecutiveComma(carNames);
+        isLastCommaBlank(carNames);
+        isNameBlank(carNames);
+        isDuplicateNames(carNames);
+    }
+
+    public static void isNumber(String runningTime){
+        Pattern pattern = Pattern.compile(NUMBER_CHECK);
+        Matcher matcher = pattern.matcher(runningTime);
+        throwInputError(
+            !matcher.find(), ErrorType.ERROR_ONLY_NUMBER);
+    }
+
+    public static void isBigNum(String runningTime){
+        throwInputError((runningTime.length()>2), ErrorType.ERROR_TOO_BIG_NUMBER);
+    }
+
+    public static void validationNumber(String runningTime){
+        isNumber(runningTime);
+        isBigNum(runningTime);
     }
 
 }
