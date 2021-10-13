@@ -8,21 +8,19 @@ public enum ErrorType {
     ERROR_LIMIT_CAR_NAME("[ERROR] 자동차의 이름은 5글자 이하여야 합니다."),
     ERROR_MINIMUM_CAR("[ERROR] 최소 2대 이상 입력해주세요."),
     ERROR_ONLY_NUMBER("[ERROR] 숫자만 입력해주세요."),
-    ERROR_TOO_BIG_NUMBER("[ERROR] 너무 큰 숫자입니다.")
-    ;
-
+    ERROR_TOO_BIG_NUMBER("[ERROR] 너무 큰 숫자입니다.");
 
     private String errMsg;
 
-    public String getErrMsg(){
+    public String getErrMsg() {
         return this.errMsg;
     }
 
-    public void printErrMsg(){
+    public void printErrMsg() {
         System.out.println(this.errMsg);
     }
 
-    ErrorType(String errMsg){
+    ErrorType(String errMsg) {
         this.errMsg = errMsg;
     }
 

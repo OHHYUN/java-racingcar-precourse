@@ -15,10 +15,10 @@ public class Racing {
 
     public Racing(String... args) {
         this.cars = new ArrayList<>();
-        for(String carName : args){
+        for (String carName : args) {
             this.cars.add(new Car(carName));
         }
-        if(cars.size() < MINIMUM_CAR){
+        if (cars.size() < MINIMUM_CAR) {
             throw new InputException(ErrorType.ERROR_MINIMUM_CAR);
         }
     }
@@ -28,19 +28,19 @@ public class Racing {
     }
 
     public void moveAll() {
-        for(Car car : this.cars){
+        for (Car car : this.cars) {
             move(car);
         }
         printAll();
     }
 
-    public void move(Car car){
-        int ranNo = Randoms.pickNumberInRange(0,9);
+    public void move(Car car) {
+        int ranNo = Randoms.pickNumberInRange(0, 9);
         car.move(ranNo);
     }
 
-    public void printAll(){
-        for(Car car : this.cars){
+    public void printAll() {
+        for (Car car : this.cars) {
             car.printDistance();
         }
         System.out.println();
@@ -51,6 +51,5 @@ public class Racing {
         Winner winner = new Winner(cars);
         System.out.println("최종 우승자는 " + winner.getWinner() + " 입니다.");
     }
-
 
 }

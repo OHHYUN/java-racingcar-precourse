@@ -12,21 +12,21 @@ public class Winner {
         this.cars = cars;
     }
 
-    public String getWinner(){
+    public String getWinner() {
         int winnersDistance = cars.get(0).getDistance();
         StringJoiner winners = new StringJoiner(",");
         List<Car> winnerCars = new ArrayList<>(cars);
-        for(Car car : winnerCars){
+        for (Car car : winnerCars) {
             getMaxCarName(car, winnersDistance);
         }
-        for(Car car : cars){
+        for (Car car : cars) {
             winners.add(car.getCarName());
         }
         return winners.toString();
     }
 
-    public void getMaxCarName(Car car, int max){
-        if(car.getDistance() != max){
+    public void getMaxCarName(Car car, int max) {
+        if (car.getDistance() != max) {
             cars.remove(car);
         }
     }

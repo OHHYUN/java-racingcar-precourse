@@ -9,8 +9,8 @@ public class CarName {
 
     private String carName;
 
-    public CarName(String carName){
-        if(carName.length() > LIMIT_CAR_NAME_DIGIT){
+    public CarName(String carName) {
+        if (carName.length() > LIMIT_CAR_NAME_DIGIT) {
             throw new InputException(ErrorType.ERROR_LIMIT_CAR_NAME);
         }
         this.carName = carName;

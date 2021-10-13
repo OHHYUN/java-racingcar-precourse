@@ -6,11 +6,11 @@ public enum MessageType {
 
     private String msg;
 
-    MessageType(String msg){
+    MessageType(String msg) {
         this.msg = msg;
     }
 
-    public void printMsg(){
+    public void printMsg() {
         System.out.println(this.msg);
     }
 }

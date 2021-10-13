@@ -10,35 +10,35 @@ public class Race {
 
     public static final String COMMA = ",";
 
-    public void play(){
+    public void play() {
         Racing racing = inputCarNames();
         int runningTime = inputRunningTime();
-        for(int i=0; i<runningTime; i++){
+        for (int i = 0; i < runningTime; i++) {
             racing.moveAll();
         }
         racing.printWinner();
     }
 
-    public Racing inputCarNames(){
+    public Racing inputCarNames() {
         MessageType.INPUT_CAR_NAME.printMsg();
-        try{
+        try {
             String carNames = Console.readLine();
             InputValidUtils.validationAll(carNames);
-            String [] carArr = carNames.split(COMMA);
+            String[] carArr = carNames.split(COMMA);
             Racing racing = new Racing(carArr);
             return racing;
-        }catch (InputException inputException){
+        } catch (InputException inputException) {
             return inputCarNames();
         }
     }
 
-    public int inputRunningTime(){
+    public int inputRunningTime() {
         MessageType.INPUT_RUNNING_TIME.printMsg();
-        try{
+        try {
             String runningTime = Console.readLine();
             InputValidUtils.validationNumber(runningTime);
             return Integer.parseInt(runningTime);
-        }catch (InputException inputException){
+        } catch (InputException inputException) {
             return inputRunningTime();
         }
     }

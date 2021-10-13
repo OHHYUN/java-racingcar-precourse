@@ -41,46 +41,46 @@ public class InputValidUtils {
     public static boolean isDuplicateNames(String carNames) {
         String[] carNameArr = carNames.split(COMMA);
         List<String> carNameList = new ArrayList<>();
-        for(int i =0; i<carNameArr.length; i++){
+        for (int i = 0; i < carNameArr.length; i++) {
             inputCarName(carNameList, carNameArr[i]);
         }
-        if(carNameArr.length!=carNameList.size()){
+        if (carNameArr.length != carNameList.size()) {
             throwInputError(true, ErrorType.ERROR_DUPLICATE_NAME);
         }
         return false;
     }
 
-    public static void inputCarName(List<String> carNameList, String carName){
-        if(!carNameList.contains(carName)){
+    public static void inputCarName(List<String> carNameList, String carName) {
+        if (!carNameList.contains(carName)) {
             carNameList.add(carName);
         }
     }
 
-    public static void throwInputError(boolean match, ErrorType errorType){
-        if(match){
+    public static void throwInputError(boolean match, ErrorType errorType) {
+        if (match) {
             throw new InputException(errorType);
         }
     }
 
-    public static void validationAll(String carNames){
+    public static void validationAll(String carNames) {
         isConsecutiveComma(carNames);
         isLastCommaBlank(carNames);
         isNameBlank(carNames);
         isDuplicateNames(carNames);
     }
 
-    public static void isNumber(String runningTime){
+    public static void isNumber(String runningTime) {
         Pattern pattern = Pattern.compile(NUMBER_CHECK);
         Matcher matcher = pattern.matcher(runningTime);
         throwInputError(
             !matcher.find(), ErrorType.ERROR_ONLY_NUMBER);
     }
 
-    public static void isBigNum(String runningTime){
-        throwInputError((runningTime.length()>2), ErrorType.ERROR_TOO_BIG_NUMBER);
+    public static void isBigNum(String runningTime) {
+        throwInputError((runningTime.length() > 2), ErrorType.ERROR_TOO_BIG_NUMBER);
     }
 
-    public static void validationNumber(String runningTime){
+    public static void validationNumber(String runningTime) {
         isNumber(runningTime);
         isBigNum(runningTime);
     }
