@@ -18,6 +18,10 @@ public enum ErrorType {
         return this.errMsg;
     }
 
+    public void printErrMsg(){
+        System.out.println(this.errMsg);
+    }
+
     ErrorType(String errMsg){
         this.errMsg = errMsg;
     }
