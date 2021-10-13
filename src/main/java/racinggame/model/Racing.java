@@ -3,11 +3,9 @@ package racinggame.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.StringJoiner;
 
 import nextstep.utils.Randoms;
-import racinggame.ErrorType;
-import racinggame.InputException;
+import racinggame.exception.InputException;
 
 public class Racing {
 
@@ -44,6 +42,7 @@ public class Racing {
         for(Car car : this.cars){
             car.printDistance();
         }
+        System.out.println();
     }
 
     public void printWinner() {

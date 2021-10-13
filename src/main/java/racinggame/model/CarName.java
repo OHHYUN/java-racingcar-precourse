@@ -1,7 +1,6 @@
 package racinggame.model;
 
-import racinggame.ErrorType;
-import racinggame.InputException;
+import racinggame.exception.InputException;
 
 public class CarName {
 

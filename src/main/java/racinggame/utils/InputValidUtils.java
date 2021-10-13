@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import racinggame.ErrorType;
-import racinggame.InputException;
+import racinggame.model.ErrorType;
+import racinggame.exception.InputException;
 
 public class InputValidUtils {
 

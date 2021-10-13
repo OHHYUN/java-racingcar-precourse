@@ -1,4 +1,6 @@
-package racinggame;
+package racinggame.exception;
+
+import racinggame.model.ErrorType;
 
 public class InputException extends IllegalArgumentException{
 
