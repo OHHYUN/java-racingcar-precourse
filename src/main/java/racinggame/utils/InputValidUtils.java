@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import racinggame.model.ErrorType;
+import racinggame.enums.ErrorType;
 import racinggame.exception.InputException;
 
 public class InputValidUtils {

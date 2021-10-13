@@ -1,4 +1,4 @@
-package racinggame.model;
+package racinggame.enums;
 
 public enum ErrorType {
     ERROR_CONSECUTIVE_COMMA("[ERROR] 연속된 콤마(,) 가 있습니다."),

@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import nextstep.utils.Randoms;
+import racinggame.enums.ErrorType;
 import racinggame.exception.InputException;
 
 public class Racing {

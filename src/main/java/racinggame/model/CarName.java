@@ -1,5 +1,6 @@
 package racinggame.model;
 
+import racinggame.enums.ErrorType;
 import racinggame.exception.InputException;
 
 public class CarName {

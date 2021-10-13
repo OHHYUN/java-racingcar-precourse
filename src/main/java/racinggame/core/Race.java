@@ -2,7 +2,7 @@ package racinggame.core;
 
 import nextstep.utils.Console;
 import racinggame.exception.InputException;
-import racinggame.model.MessageType;
+import racinggame.enums.MessageType;
 import racinggame.model.Racing;
 import racinggame.utils.InputValidUtils;
 

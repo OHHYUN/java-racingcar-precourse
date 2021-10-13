@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import racinggame.model.CarName;
-import racinggame.model.ErrorType;
+import racinggame.enums.ErrorType;
 import racinggame.model.Racing;
 import racinggame.utils.InputValidUtils;
 
